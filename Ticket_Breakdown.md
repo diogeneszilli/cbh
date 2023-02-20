@@ -22,11 +22,14 @@ Acceptence criteria:
 - New column custom_id (string, non-required) in agents table.
 - Edit create and update api for agents to support new field.
 - Confirm permission to use this route for Facilities user type.
+
 Story points: 3 (1 work day)
 
 Ticket 2 - Retrieve custom id and not id column from generateReport function.
 Acceptence criteria:
 - Return custom_id of agents table in the id column of generateReport method. (Return id from agents table if custom_id is null)
+
 Story points: 2 (1/2 work day)
+
 Blocked by: Ticket 1.
 Ticket 1 should be completed first to unblock this ticket.
