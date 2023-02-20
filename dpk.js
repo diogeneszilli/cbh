@@ -1,5 +1,9 @@
 const crypto = require("crypto");
 
+const getHash = (param) => {
+  return crypto.createHash("sha3-512").update(param).digest("hex")
+}
+
 const getDataFromEvent = (event) => {
   let data;
 
