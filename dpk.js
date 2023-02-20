@@ -7,10 +7,10 @@ const getHash = (param) => {
 const getDataFromEvent = (event) => {
   let data;
 
-  if (event) {
-    data = !event.partitionKey ? crypto.createHash("sha3-512").update(JSON.stringify(event)).digest("hex")
-                               : event.partitionKey;
-  }
+  if (!event) return data; 
+
+  data = !event.partitionKey ? getHash(JSON.stringify(event)) : event.partitionKey;
+
   return data;
 }
 
@@ -19,11 +19,11 @@ const getCandidate = (data) => {
   const MAX_PARTITION_KEY_LENGTH = 256;
   let candidate = TRIVIAL_PARTITION_KEY;
 
-  if (data) {
-    data = typeof data !== "string" ?  JSON.stringify(data) : TRIVIAL_PARTITION_KEY
-    candidate = data.length > MAX_PARTITION_KEY_LENGTH ? crypto.createHash("sha3-512").update(data).digest("hex") 
-                                                       : data;
-  }
+  if (!data) return candidate;
+
+  data = typeof data !== "string" ?  JSON.stringify(data) : TRIVIAL_PARTITION_KEY
+  candidate = data.length > MAX_PARTITION_KEY_LENGTH ? getHash(data) : data;
+
   return candidate;
 }
 
