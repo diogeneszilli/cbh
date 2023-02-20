@@ -17,7 +17,7 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-Ticket 1 - Add custom id for Agents table.
+### Ticket 1 - Add custom id for Agents table.
 
 Acceptence criteria:
 - New column custom_id (string, non-required) in agents table.
@@ -26,7 +26,7 @@ Acceptence criteria:
 
 Story points: 3 (1 work day)
 
-Ticket 2 - Add custom id field in create and update view.
+### Ticket 2 - Add custom id field in create and update view.
 
 Acceptence criteria:
 - New field custom id in agents create and update view.
@@ -38,7 +38,7 @@ Blocked by: Ticket 1.
 
 Ticket 1 should be completed first to unblock this ticket.
 
-Ticket 3 - Retrieve custom id and not id column from generateReport function.
+### Ticket 3 - Retrieve custom id and not id column from generateReport function.
 
 Acceptence criteria:
 - Return custom_id of agents table in the id column of generateReport method. (Return id from agents table if custom_id is null)
